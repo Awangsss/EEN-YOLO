@@ -1,0 +1,10 @@
+训练：
+在train.py中的255行test_loader定义的地方把rect参数修改为False,训练其他网络可以修改回去,一般情况下影响不大.
+
+测试:
+在test.py中的90行dataloader定义的地方把rect参数修改为False,训练其他网络可以修改回去,一般情况下影响不大.
+
+推理:
+在utils/datasets.py中的984行下面添加auto=False,推理其他网络的时候可以修改回去,一般情况下影响不大.
+def letterbox(img, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleFill=False, scaleup=True, stride=32):
+    auto=False
